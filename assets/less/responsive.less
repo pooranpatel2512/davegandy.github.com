@@ -36,22 +36,26 @@
 // ---------------------
 
 @media (max-width: 480px) {
-    .container { width: 300px; }
+    .container { width: 280px; }
     #header-name {
-        .first-name { font-size: 97px; }
-        .last-name { font-size: 85px; }
+        padding: 20px 15px;
+        .first-name { font-size: 88px; }
+        .last-name {
+            font-size: 75px;
+            line-height: 1em;
+        }
     }
     #header-bullets ul {
         margin-left: 0px;
         li {
-            font-size: 37px;
+            font-size: 34px;
         }
     }
     #header-contact {
         border-top: solid 1px @black;
         margin-top: 20px;
         ul {
-            margin-left: 37px;
+            margin-left: 35px;
             li {
                 display: block;
                 line-height: 1.5em;
@@ -83,11 +87,11 @@
         border-top: solid 1px @black;
         margin-top: 20px;
         ul {
-            margin-left: 50px;
+            margin-left: 54px;
             li {
                 display: block;
                 line-height: 1.5em;
-                font-size: 34px;
+                font-size: 37px;
             }
             .icon-envelope, .icon-home { padding-right: 0; }
         }
@@ -137,11 +141,10 @@
     #header-bullets ul li { font-size: 40px; }
 
     #header-contact ul {
+        margin-left: 32px;
         .icon-envelope, .icon-home { padding-right: 80px; }
     }
 }
-
-
 
 @media (min-width: 768px) {
     section#skills, section#interests {
