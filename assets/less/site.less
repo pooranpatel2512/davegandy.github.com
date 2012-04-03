@@ -34,6 +34,7 @@ h6 { font-size: round(@baseFontSize * .85) }
     color: @white;
     .border-radius(5px);
     padding: 20px 15px 35px;
+    text-align: center;
     .first-name {
         text-transform: uppercase;
         font-size: 155px;
@@ -58,9 +59,14 @@ h6 { font-size: round(@baseFontSize * .85) }
 }
 
 #header-contact {
-    font-size: 22px;
-    margin: 20px 0;
-    .icon-home, .icon-phone { margin-left: 75px; }
+    ul {
+        font-size: 22px;
+        li {
+            display: inline;
+        }
+        margin: 20px 0 20px 30px;
+        .icon-envelope, .icon-home { padding-right: 190px; }
+    }
 }
 
 section {
@@ -73,6 +79,7 @@ section {
         color: @white;
     }
     article {
+        position: relative;
         margin-bottom: 30px;
         h4 {
             padding-bottom: 5px;
@@ -81,26 +88,12 @@ section {
         }
         ul { margin-left: 40px; }
         aside {
+            position: absolute;
+            top: 0;
+            right: 0;
             text-align: right;
-            float: right;
+            font-weight: normal;
             font-style: italic;
-        }
-    }
-}
-
-section#skills, section#interests {
-    article {
-        padding-bottom: 15px;
-        border-bottom: 1px solid @black;
-        margin-bottom: 15px;
-        h4 {
-            padding-bottom: 0;
-            border-bottom: none;
-            margin-bottom: 0;
-        }
-        &:last-child {
-            padding-bottom: 0;
-            border-bottom: none;
         }
     }
 }
@@ -117,3 +110,5 @@ section#skills, section#interests {
         page-break-before:always;
     }
 }
+
+@import "responsive.less";

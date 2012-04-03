@@ -1,0 +1,163 @@
+/*!
+ * Bootstrap Responsive v2.0.2
+ *
+ * Copyright 2012 Twitter, Inc
+ * Licensed under the Apache License v2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Designed and built with all the love in the world @twitter by @mdo and @fat.
+ */
+
+// Responsive.less
+// For phone and tablet devices
+// -------------------------------------------------------------
+
+
+// REPEAT VARIABLES & MIXINS
+// -------------------------
+// Required since we compile the responsive stuff separately
+
+//@import "variables.less"; // Modify this for custom colors, font-sizes, etc
+@import "mixins.less";
+
+
+// RESPONSIVE CLASSES
+// ------------------
+
+// Hide from screenreaders and browsers
+// Credit: HTML5 Boilerplate
+.hidden {
+  display: none;
+  visibility: hidden;
+}
+
+
+// UP TO LANDSCAPE PHONE
+// ---------------------
+
+@media (max-width: 480px) {
+    .container { width: 300px; }
+    #header-name {
+        .first-name { font-size: 97px; }
+        .last-name { font-size: 85px; }
+    }
+    #header-bullets ul {
+        margin-left: 0px;
+        li {
+            font-size: 37px;
+        }
+    }
+    #header-contact {
+        border-top: solid 1px @black;
+        margin-top: 20px;
+        ul {
+            margin-left: 37px;
+            li {
+                display: block;
+                line-height: 1.5em;
+                font-size: 24px;
+            }
+            .icon-envelope, .icon-home { padding-right: 0; }
+        }
+    }
+
+}
+
+// LANDSCAPE PHONE TO SMALL DESKTOP & PORTRAIT TABLET
+// --------------------------------------------------
+
+@media (min-width: 481px) and (max-width: 767px) {
+    .container { width: 440px; }
+
+    #header-name {
+        .first-name { font-size: 148px; }
+        .last-name { font-size: 131px; }
+    }
+    #header-bullets ul {
+        margin-left: 0px;
+        li {
+            font-size: 54px;
+        }
+    }
+    #header-contact {
+        border-top: solid 1px @black;
+        margin-top: 20px;
+        ul {
+            margin-left: 50px;
+            li {
+                display: block;
+                line-height: 1.5em;
+                font-size: 34px;
+            }
+            .icon-envelope, .icon-home { padding-right: 0; }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+  // Padding to set content in a bit
+  body {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  // GRID & CONTAINERS
+  // -----------------
+  // Undo negative margin on rows
+  .row {
+    margin-left: 0;
+  }
+  // Make all columns even
+  .row > [class*="span"],
+  .row-fluid > [class*="span"] {
+    float: none;
+    display: block;
+    width: auto;
+    margin: 0;
+  }
+
+    section article aside {
+        position: relative;
+        text-align: left;
+    }
+}
+
+// PORTRAIT TABLET TO DEFAULT DESKTOP
+// ----------------------------------
+
+@media (min-width: 768px) and (max-width: 979px) {
+    // Fixed grid
+    #grid > .core(42px, 20px);
+
+    #header-name {
+        .first-name { font-size: 117px; }
+        .last-name { font-size: 103px; }
+    }
+
+    #header-bullets ul li { font-size: 40px; }
+
+    #header-contact ul {
+        .icon-envelope, .icon-home { padding-right: 80px; }
+    }
+}
+
+
+
+@media (min-width: 768px) {
+    section#skills, section#interests {
+        article {
+            padding-bottom: 15px;
+            border-bottom: 1px solid @black;
+            margin-bottom: 15px;
+            h4 {
+                padding-bottom: 0;
+                border-bottom: none;
+                margin-bottom: 0;
+            }
+            &:last-child {
+                padding-bottom: 0;
+                border-bottom: none;
+            }
+        }
+    }
+}
