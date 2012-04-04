@@ -39,6 +39,7 @@
             $.ajax({
                 url: 'http://api.twitter.com/1/users/show.json',
                 data: {screen_name: 'fortaweso_me'},
+                data_type: 'jsonp',
                 success: function(data) {
                     $('#followers').html(data.followers_count);
                 }
