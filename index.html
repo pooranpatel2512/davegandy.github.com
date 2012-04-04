@@ -33,6 +33,24 @@
         })();
 
     </script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $.ajax({
+                url: 'http://api.twitter.com/1/users/show.json',
+                data: {screen_name: 'fortaweso_me'},
+                success: function(data) {
+                    $('#followers').html(data.followers_count);
+                }
+            });
+            $.ajax({
+                url: 'http://github.com/api/v2/json/repos/show/FortAwesome/Font-Awesome',
+                success: function(data) {
+                    $('#watchers').html(data.repository.watchers);
+                }
+            });
+        });
+    </script>
 </head>
 <body onload="setTimeout(function() { window.scrollTo(0, 1) }, 100);">
 
@@ -74,8 +92,8 @@
             <ul>
                 <li>One font, 150+ icons - a pictographic language of web-related actions</li>
                 <li>#2 on the front page of Hacker News the same day as its March 6th release</li>
-                <li>2600+ watchers on GitHub - <a href="https://github.com/FortAwesome/Font-Awesome">github.com/FortAwesome/ Font-Awesome/</a></li>
-                <li>600+ followers on Twitter - <a href="https://twitter.com/fortaweso_me">@fortaweso_me</a></li>
+                <li><span id="watchers">&nbsp;</span> watchers on GitHub - <a href="https://github.com/FortAwesome/Font-Awesome">github.com/FortAwesome/<wbr>Font-Awesome/</a></li>
+                <li><span id="followers">&nbsp;</span> followers on Twitter - <a href="https://twitter.com/fortaweso_me">@fortaweso_me</a></li>
             </ul>
         </article>
     </section>
